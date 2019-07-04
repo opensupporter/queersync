@@ -1,0 +1,31 @@
+{
+  "interval_in_seconds": 86400,
+  "spoke": {
+    "aep": "http://spoke.dev.joshco.org/osdi/org/1/campaigns/1/api/v1",
+    "trace": false
+  },
+  "van": {
+    "aep": "https://osdi.ngpvan.com/api/v1",
+    "trace": false
+  },
+  "mapping": [
+    {
+      "comment": "Can you help us?",
+      "spoke_question_url": "http://spoke.dev.joshco.org/osdi/org/1/campaigns/1/api/v1/questions/1",
+      "van_question_url": "https://osdi.ngpvan.com/api/v1/questions/203079",
+      "spoke_van_response_map": {
+        "Yes":  856278,
+        "No": 856279
+      }
+    },
+    {
+      "comment": "Do you need a ride?",
+      "spoke_question_url": "http://spoke.dev.joshco.org/osdi/org/1/campaigns/1/api/v1/questions/2",
+      "van_question_url": "https://osdi.ngpvan.com/api/v1/questions/202003",
+      "spoke_van_response_map": {
+        "Yes": 851618,
+        "No": 851618
+      }
+    }
+  ]
+}

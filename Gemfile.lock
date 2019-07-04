@@ -1,0 +1,59 @@
+GIT
+  remote: git://github.com/cqql/futuroscope.git
+  revision: d6400d779360678021101c9f392dcd3fbb1b7c3b
+  ref: no-pool
+  specs:
+    futuroscope (0.1.11)
+
+GIT
+  remote: git://github.com/joshco/hyperclient.git
+  revision: 7b79ed988981899c5ffe27ed7bf57a0536d4269b
+  ref: develop
+  specs:
+    hyperclient (0.7.3)
+      faraday
+      faraday-digestauth
+      faraday_hal_middleware
+      faraday_middleware
+      futuroscope
+      net-http-digest_auth
+      uri_template
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    dotenv (2.7.4)
+    faraday (0.15.4)
+      multipart-post (>= 1.2, < 3)
+    faraday-detailed_logger (2.1.3)
+      faraday (~> 0.8)
+    faraday-digestauth (0.3.0)
+      faraday (~> 0.7)
+      net-http-digest_auth (~> 1.4)
+    faraday_hal_middleware (0.1.0)
+      faraday_middleware (~> 0.9)
+    faraday_middleware (0.13.1)
+      faraday (>= 0.7.4, < 1.0)
+    faraday_middleware-multi_json (0.0.6)
+      faraday_middleware
+      multi_json
+    multi_json (1.13.1)
+    multipart-post (2.1.1)
+    net-http-digest_auth (1.4.1)
+    uri_template (0.7.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  dotenv
+  faraday-detailed_logger
+  faraday_middleware-multi_json
+  futuroscope!
+  hyperclient!
+
+RUBY VERSION
+   ruby 2.5.1p57
+
+BUNDLED WITH
+   1.17.1
