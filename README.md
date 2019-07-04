@@ -1,14 +1,17 @@
-# Queer Sync
-The gayest sync ever! 
+# Queer Sync Van Spoken
+ ![](img/pride-strip-long.png)
+#### The gayest sync ever!
 
-Queersync is a script that will automatically pull down recent survey question answers from Spoke, and insert them into VAN / Everyaction.
+<img src="img/osdi-small.png" float="right"/>
+
+Queersync is an OSDU based script that will automatically pull down recent survey question answers from Spoke, and insert them into VAN / Everyaction.
 
 You can configure a mapping between Spoke and VAN question/answers.
  
 Set it up as a recurring cron job on your Spoke server to have the last N hours of activity pushed in to VAN.
 
 ## Example Output
-```
+```bash
 ubuntu@wsl:~/unx/queersync$ ./queersync  
 Start date 2019-06-29 08:38:20 -0400
 Processing Danial Zieme
@@ -34,7 +37,7 @@ SUCCESS for Elody Cronin
 
 ## Prep
 
-> Windows Users: Unless you are super kinky and into BSDM and pain, I recommend using [Microsoft's Ubuntu for Windows](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab)
+> Windows Users: Unless you are super kinky, BSDM and pain, I recommend using [Microsoft's Ubuntu for Windows](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab), unless you're into that, which is cool too.  _You be You._
 
 1. Install Ruby 2.5.1
 
@@ -59,7 +62,7 @@ rvm install 2.5.1
 
 ## Edit .env
 
-Fill in your VAN and Spoke API Tokens
+Fill in your VAN and Spoke API Tokens, or use server environment variables.
 
 ## Edit config.json
 
@@ -81,7 +84,7 @@ Then click the 'osdi:question' link.
 ### Map those questions
 Copy the "self" href url, and also the "key" attributes of the response objects. You'll need to use your head to match up the yucky numeric key values with the text values in VAN.
 
-```
+```json
      {
         "origin_system": "VAN",
         "name": "pbank",
