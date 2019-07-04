@@ -1,4 +1,4 @@
-# Queer Sync Van Spoken
+# Queer Sync
  ![](img/pride-strip-long.png)
 #### The gayest sync ever!
 
