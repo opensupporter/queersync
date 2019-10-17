@@ -4,7 +4,7 @@
 
 <img src="img/osdi-small.png" float="right"/>
 
-Queersync is an OSDU based script that will automatically pull down recent survey question answers from Spoke, and insert them into VAN / Everyaction.
+Queersync is an OSDI-based script that will automatically pull down recent survey question answers from Spoke, and insert them into VAN / Everyaction.
 
 You can configure a mapping between Spoke and VAN question/answers.
  
@@ -39,7 +39,7 @@ SUCCESS for Elody Cronin
 
 > Windows Users: Unless you are super kinky, BSDM and pain, I recommend using [Microsoft's Ubuntu for Windows](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab), unless you're into that, which is cool too.  _You be You._
 
-1. Install Ruby 2.5.1
+1. Install Ruby 2.6.3
 
 Use RVM - https://rvm.io/rvm/install
 Run these shell commands:
@@ -49,7 +49,7 @@ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703
 
 \curl -sSL https://get.rvm.io | bash -s stable
 
-rvm install 2.5.1
+rvm install 2.6.3
 ```
 
 2. Clone the github repo
