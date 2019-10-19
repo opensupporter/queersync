@@ -12,8 +12,8 @@ class Util
   end
 
   def self.make_psh_person(person)
-    psh_person= person.slice('given_name','family_name','phone_numbers','email_addresses')
-    unless psh_person['email_addresses']
+    psh_person= person.slice('given_name','family_name','phone_numbers','email_addresses','postal_addresses')
+    unless psh_person['email_addresses'] && CONFIG['fake_emails']==true
       psh_person['email_addresses']=[
         {
           address: [

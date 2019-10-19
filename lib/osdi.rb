@@ -2,7 +2,7 @@ require 'faraday/detailed_logger'
 
 class OSDI
 
-  attr_accessor :aep, :trace_mode, :skip_ssl_verify, :api_token
+  attr_accessor :aep, :trace_mode, :skip_ssl_verify, :api_token, :_hc
 
   def hyperclient(raw_options={})
 
@@ -51,11 +51,12 @@ class OSDI
     end
     #osdi.headers.update('Content-Type' => self.request_content_type)
 
+    @_hc = osdi
     return osdi
   end
 
   def person_signup(psh)
-    hc=self.hyperclient
+    hc=@_hc || self.hyperclient
     psh_link=hc._links['osdi:person_signup_helper']
     response=psh_link._post psh.to_json
   end

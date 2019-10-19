@@ -6,7 +6,13 @@
 
 Queersync is an OSDI-based script that will automatically pull down recent survey question answers from Spoke, and insert them into VAN / Everyaction.
 
-You can configure a mapping between Spoke and VAN question/answers.
+> Technically you can substitute any two systems that support the necessary parts of OSDI.
+
+You can configure a mapping between Spoke and VAN question/answers.  
+
+You can also chose not to map questions, but just do a match/create/update on the VAN side.
+
+> For just signups, leave the mapping key in the config.json
  
 Set it up as a recurring cron job on your Spoke server to have the last N hours of activity pushed in to VAN.
 
