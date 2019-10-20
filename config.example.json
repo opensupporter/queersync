@@ -6,7 +6,15 @@
   },
   "van": {
     "aep": "https://osdi.ngpvan.com/api/v1",
-    "trace": false
+    "trace": false,
+    "add_lists": [
+      "Summer Program Volunteers",
+      "Advisory Board"
+    ],
+    "add_tags": [
+      23423424,
+      43423423
+    ]
   },
   "mapping": [
     {
