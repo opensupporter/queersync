@@ -4,15 +4,19 @@
 
 <img src="img/osdi-small.png" float="right"/>
 
-Queersync is an OSDI-based script that will automatically pull down recent survey question answers from Spoke, and insert them into VAN / Everyaction.
+Queersync is an OSDI-based script that will automatically pull down recent survey question answers from Spoke, and insert them into VAN / Everyaction, or other OSDI Systems.
 
 > Technically you can substitute any two systems that support the necessary parts of OSDI.
 
-You can configure a mapping between Spoke and VAN question/answers.  
+Other things to be proud about
 
-You can also chose not to map questions, but just do a match/create/update on the VAN side.
+* You can configure a mapping between Spoke and VAN question/answers.  
+
+* You can also chose not to map questions, but just do a match/create/update on the VAN side.
 
 > For just signups, leave the mapping key in the config.json
+
+* You can specify tags (nee Activist Codes) and lists for people to be added to. (If supported by downstream system)
  
 Set it up as a recurring cron job on your Spoke server to have the last N hours of activity pushed in to VAN.
 
@@ -90,7 +94,7 @@ Then click the 'osdi:question' link.
 ### Map those questions
 Copy the "self" href url, and also the "key" attributes of the response objects. You'll need to use your head to match up the yucky numeric key values with the text values in VAN.
 
-```json
+```json5
      {
         "origin_system": "VAN",
         "name": "pbank",
@@ -155,7 +159,15 @@ For each AEP, you can turn `trace` on if you are running into problems, which wi
   },
   "van": {
     "aep": "https://osdi.ngpvan.com/api/v1",
-    "trace": false
+    "trace": false,
+    "add_lists": [
+      "Summer Program Volunteers",
+      "Advisory Board"
+    ],
+    "add_tags": [
+      "volunteers",
+      "squeaky_wheels"
+    ]
   },
 ```
 

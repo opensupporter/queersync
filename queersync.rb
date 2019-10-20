@@ -24,16 +24,17 @@ spoke_aep=spoke.hyperclient
 
 completed_people=[]
 
-van=OSDI.new
-van.trace_mode=config.dig('van','trace')
-van.aep=config.dig('van','aep')
+van=OSDI.new(config.dig('van'))
 van.api_token=ENV['VAN_API_TOKEN']
 
 
 new_answers_link=spoke_aep['osdi:answers']
-new_answers_link.query_params.merge!({
-  filter: "modified_date gt '#{start_date_string}'"
-                                     })
+unless config.dig('spoke','no_odata') == true
+  new_answers_link.query_params.merge!({
+    filter: "modified_date gt '#{start_date_string}'"
+  })
+end
+
 new_answers=new_answers_link['osdi:answers']
 
 new_answers.each do |a|
@@ -54,7 +55,7 @@ new_answers.each do |a|
 
   puts "Processing #{msg}"
 
-  psh=Util.make_psh(person)
+  psh=van.make_psh(person)
   van_person=van.person_signup(psh)
   van_person_url=van_person._links['self']._url
 

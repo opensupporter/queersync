@@ -11,30 +11,6 @@ class Util
     }
   end
 
-  def self.make_psh_person(person)
-    psh_person= person.slice('given_name','family_name','phone_numbers','email_addresses','postal_addresses')
-    unless psh_person['email_addresses'] && CONFIG['fake_emails']==true
-      psh_person['email_addresses']=[
-        {
-          address: [
-            person['given_name'],
-            '.',
-            person['family_name'],
-            '@',
-            'fake.osdi.info'
-          ].join.downcase
-        }
-      ]
-    end
-    psh_person
-  end
-
-  def self.make_psh(person)
-    {
-      person: make_psh_person(person)
-    }
-  end
-
   def self.map_canvass(osdi_answers, question_mapping)
     add_answers=osdi_answers.map do |osdi_answer|
       spoke_question_url=osdi_answer['osdi:question']._url
